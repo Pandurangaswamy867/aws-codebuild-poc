@@ -6,11 +6,11 @@ phases:
       python: 3.9
     commands:
       - echo Installing dependencies...
-      - pip install pytest pytest-xdist
+      - pip install pytest
   build:
     commands:
-      - echo Running tests in parallel...
-      - pytest tests/ --maxfail=5 --disable-warnings -n auto --tb=short
+      - echo Running tests sequentially...
+      - pytest tests/ --maxfail=5 --disable-warnings --tb=short
 
 artifacts:
   files:
