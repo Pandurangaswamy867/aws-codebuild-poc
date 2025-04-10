@@ -1,14 +1,7 @@
-# tests/test_main.py
+from src.calculator import add, subtract
 
-import unittest
-from src.main import add, subtract
+def test_add():
+    assert add(3, 4) == 7
 
-class TestMathFunctions(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(add(3, 4), 7)
-
-    def test_subtract(self):
-        self.assertEqual(subtract(10, 4), 6)
-
-if __name__ == "__main__":
-    unittest.main()
+def test_subtract():
+    assert subtract(10, 4) == 6
