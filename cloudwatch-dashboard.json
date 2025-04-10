@@ -1,0 +1,32 @@
+{
+  "widgets": [
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/CodeBuild", "BuildDuration", "ProjectName", "codebuild-poc-parallel-tests" ]
+        ],
+        "period": 300,
+        "stat": "Average",
+        "region": "us-east-1",
+        "title": "CodeBuild - Build Duration"
+      }
+    },
+    {
+      "type": "log",
+      "x": 12,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "query": "SOURCE 'codebuild/codebuild-poc-parallel-tests' | fields @timestamp, @message | sort @timestamp desc | limit 20",
+        "region": "us-east-1",
+        "title": "CodeBuild Log Stream"
+      }
+    }
+  ]
+}
